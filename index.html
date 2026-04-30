@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>My Links</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f4f0;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 48px 16px 64px;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  /* Top bar */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  .topbar-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: #555;
+  }
+  .topbar-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #222;
+  }
+
+  /* Profile section */
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .avatar-wrap {
+    position: relative;
+    margin-bottom: 18px;
+  }
+
+  .avatar {
+    width: 88px; height: 88px;
+    border-radius: 50%;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    color: #f5f4f0;
+    letter-spacing: -1px;
+    overflow: hidden;
+  }
+
+  .avatar img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+
+  .status-dot {
+    position: absolute;
+    bottom: 4px; right: 4px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #4ade80;
+    border: 2.5px solid #f5f4f0;
+  }
+
+  .profile-name {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .profile-title {
+    font-size: 13px;
+    color: #777;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .profile-bio {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.65;
+    max-width: 320px;
+  }
+
+  /* Divider */
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: #ccc;
+    margin: 28px auto;
+  }
+
+  /* Links section */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 14px;
+    padding-left: 2px;
+  }
+
+  .links-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .link-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 0.5px solid #e0ddd5;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #1a1a1a;
+    transition: border-color 0.18s, transform 0.15s;
+    cursor: pointer;
+  }
+
+  .link-card:hover {
+    border-color: #aaa;
+    transform: translateY(-1px);
+  }
+
+  .link-card:active {
+    transform: scale(0.99);
+  }
+
+  .link-icon {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .link-icon svg { width: 20px; height: 20px; }
+
+  .link-icon.instagram { background: #fef0f7; }
+  .link-icon.whatsapp  { background: #edfbf3; }
+  .link-icon.linkedin  { background: #eff5ff; }
+  .link-icon.twitter   { background: #f2f2f2; }
+  .link-icon.email     { background: #fff7ed; }
+  .link-icon.website   { background: #f5f0ff; }
+
+  .link-text { flex: 1; }
+  .link-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+    display: block;
+  }
+  .link-handle {
+    font-size: 12px;
+    color: #999;
+    display: block;
+    margin-top: 1px;
+  }
+
+  .link-arrow {
+    color: #ccc;
+    font-size: 16px;
+    transition: color 0.15s;
+  }
+  .link-card:hover .link-arrow { color: #888; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 44px;
+    font-size: 11px;
+    color: #bbb;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="topbar">
+    <span class="topbar-logo">links</span>
+    <div class="topbar-dot"></div>
+  </div>
+
+  <div class="profile">
+    <div class="avatar-wrap">
+      <!-- Replace "JD" with your initials, or add <img src="your-photo.jpg"> inside .avatar -->
+      <div class="avatar">SDS</div>
+      <div class="status-dot"></div>
+    </div>
+    <h1 class="profile-name">SDS GROUP</h1>
+    <p class="profile-title">Electrical Distributer</p>
+    <p class="profile-bio">PHILIPS ECOLINK L&T CROMPTON PLAZA PANASONIC</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="section-label">Connect with us</p>
+
+  <div class="links-grid">
+
+    <!-- ===== INSTAGRAM ===== -->
+    <a class="link-card" href="https://instagram.com/sdsxgroup" target="_blank">
+      <div class="link-icon instagram">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="5" stroke="#c2185b" stroke-width="1.8"/>
+          <circle cx="12" cy="12" r="4.5" stroke="#c2185b" stroke-width="1.8"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="#c2185b"/>
+        </svg>
+      </div>
+      <div class="link-text">
+        <span class="link-name">Instagram</span>
+        <span class="link-handle">@sdsxgroup</span>
+      </div>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <!-- ===== WHATSAPP ===== -->
+    <a class="link-card" href="https://wa.me/8750615616" target="_blank">
+      <div class="link-icon whatsapp">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 1.9.52 3.67 1.42 5.19L2 22l4.95-1.38A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Z" stroke="#16a34a" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M8.5 9.5c.5 1.5 2.5 4 5.5 5.5" stroke="#16a34a" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="link-text">
+        <span class="link-name">WhatsApp</span>
+        <span class="link-handle">+91 8750615616</span>
+      </div>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <!-- ===== LINKEDIN ===== -->
+    <!-- <a class="link-card" href="https://linkedin.com/in/yourusername" target="_blank">
+      <div class="link-icon linkedin">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="4" stroke="#1d4ed8" stroke-width="1.8"/>
+          <path d="M7 10v7M7 7v.5" stroke="#1d4ed8" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M11 17v-4a2 2 0 0 1 4 0v4M11 10v7" stroke="#1d4ed8" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="link-text">
+        <span class="link-name">LinkedIn</span>
+        <span class="link-handle">linkedin.com/in/yourusername</span>
+      </div>
+      <span class="link-arrow">→</span>
+    </a> -->
+
+    <!-- ===== TWITTER / X ===== -->
+    <!-- <a class="link-card" href="https://twitter.com/yourusername" target="_blank">
+      <div class="link-icon twitter">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4l16 16M4 20L20 4" stroke="#333" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="link-text">
+        <span class="link-name">X / Twitter</span>
+        <span class="link-handle">@yourusername</span>
+      </div>
+      <span class="link-arrow">→</span>
+    </a> -->
+
+    <!-- ===== EMAIL ===== -->
+    <a class="link-card" href="mailto:sdsenterprises2019@gmail.com">
+      <div class="link-icon email">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="5" width="20" height="14" rx="3" stroke="#b45309" stroke-width="1.8"/>
+          <path d="M2 8l10 7 10-7" stroke="#b45309" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="link-text">
+        <span class="link-name">Email</span>
+        <span class="link-handle">sdsenterprises2019@gmail.com</span>
+      </div>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <!-- ===== WEBSITE ===== -->
+    <a class="link-card" href="https://krish1o7.github.io/SDS/" target="_blank">
+      <div class="link-icon website">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9" stroke="#7c3aed" stroke-width="1.8"/>
+          <ellipse cx="12" cy="12" rx="4" ry="9" stroke="#7c3aed" stroke-width="1.4"/>
+          <path d="M3 12h18" stroke="#7c3aed" stroke-width="1.4"/>
+        </svg>
+      </div>
+      <div class="link-text">
+        <span class="link-name">Website</span>
+        <span class="link-handle">sdsgroup.com</span>
+      </div>
+      <span class="link-arrow">→</span>
+    </a>
+
+  </div>
+
+  <div class="footer">© 2019 SDS GROUP &nbsp;·&nbsp;All Rights Reserved.</div>
+
+</div>
+
+</body>
+</html>
